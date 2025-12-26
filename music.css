@@ -1,0 +1,383 @@
+/* Основные стили */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', monospace;
+}
+
+/* Навигация */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15px;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-menu {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 26px;
+    padding: 12px 24px;
+    position: relative;
+    top: -3px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.separator {
+    color: #666;
+    font-size: 24px;
+    user-select: none;
+    position: relative;
+    padding-top: 8px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.btn-menu:nth-of-type(1) { animation-delay: 0.3s; }
+.btn-menu:nth-of-type(2) { animation-delay: 0.5s; }
+.btn-menu:nth-of-type(3) { animation-delay: 0.7s; }
+.btn-menu:nth-of-type(4) { animation-delay: 0.9s; }
+
+.btn-menu:hover {
+    color: #3498db;
+    transform: translateY(-3px);
+}
+
+.btn-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.btn-menu:hover::after {
+    width: 80%;
+}
+
+.btn-menu.active {
+    color: #3498db;
+}
+
+.btn-menu.active::after {
+    width: 80%;
+}
+
+.separator:nth-of-type(1) { animation-delay: 0.4s; }
+.separator:nth-of-type(2) { animation-delay: 0.6s; }
+.separator:nth-of-type(3) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Альбомы */
+.page-title {
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    margin: 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.albums-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 20px;
+}
+
+.album-card {
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 2px solid #444;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+    border-color: #3498db;
+    box-shadow: 0 15px 30px rgba(52, 152, 219, 0.3);
+}
+
+.album-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.album-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.album-card:hover .album-image img {
+    transform: scale(1.05);
+}
+
+.album-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.album-card:hover .album-hover {
+    opacity: 1;
+}
+
+.platform-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+}
+
+.platform-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.platform-link:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.platform-link.spotify:hover {
+    background: #1DB954;
+    border-color: #1DB954;
+}
+
+.platform-link.apple:hover {
+    background: #FA243C;
+    border-color: #FA243C;
+}
+
+.platform-link.youtube:hover {
+    background: #FF0000;
+    border-color: #FF0000;
+}
+
+.platform-link.vk:hover {
+    background: #4C75A3;
+    border-color: #4C75A3;
+}
+
+.platform-link i {
+    font-size: 20px;
+    width: 24px;
+    text-align: center;
+}
+
+.album-info {
+    padding: 20px;
+}
+
+.album-title {
+    color: white;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.album-year {
+    color: #3498db;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+}
+
+.album-description {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.album-card:nth-child(1) { animation-delay: 0.2s; }
+.album-card:nth-child(2) { animation-delay: 0.4s; }
+.album-card:nth-child(3) { animation-delay: 0.6s; }
+.album-card:nth-child(4) { animation-delay: 0.8s; }
+.album-card:nth-child(5) { animation-delay: 1.0s; }
+.album-card:nth-child(6) { animation-delay: 1.2s; }
+
+/* Футер */
+.footer {
+    background: #2e2e2e;
+    padding: 15px;
+    text-align: center;
+    border-top: 2px solid #555;
+    color: #aaa;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.scroll-top:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.scroll-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Планшет и небольшие экраны (max-width: 768px) */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .btn-menu {
+        font-size: 22px;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .albums-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 28px;
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    .album-image {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .platform-links {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .platform-link {
+        padding: 10px 15px;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+/* Мобильные (max-width: 480px) */
+@media (max-width: 480px) {
+    .album-card {
+        margin: 0 10px;
+    }
+
+    .album-info {
+        padding: 15px;
+    }
+
+    .album-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .btn-menu {
+        font-size: 18px;
+        padding: 8px 16px;
+        width: 100%;
+    }
+}
+
+/* Для пользователей с уменьшенной анимацией */
+@media (prefers-reduced-motion: reduce) {
+    .btn-menu,
+    .separator,
+    .albums-minimal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUPSIZE · CONCERTS</title>
+    <link rel="stylesheet" href="concerts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ffffff;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --surface: #111111;
+            --text-secondary: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div id="top"></div>
+
+    <nav class="content">
+        <a href="index.html" class="btn-menu">HOME</a>
+        <span class="separator">•</span>
+        <a href="music.html" class="btn-menu">MUSIC</a>
+        <span class="separator">•</span>
+        <a href="concerts.html" class="btn-menu active">CONCERTS</a>
+        <span class="separator">•</span>
+        <a href="galary.html" class="btn-menu">GALARY</a>
+    </nav>
+
+    <div class="concerts-minimal">
+        <div class="concerts-header">
+            <p class="concerts-subtitle">SPRING 2026 · RUSSIA TOUR</p>
+        </div>
+
+        <div class="concerts-list">
+            <!-- Москва -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">15</div>
+                    <div class="date-month">MAR</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">MOSCOW</h3>
+                    <p class="concert-venue">Crocus City Hall</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 19:00
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 2500₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link" data-city="moscow">
+                        <span>TICKETS</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="concert-status available"></div>
+            </div>
+
+            <!-- Санкт-Петербург -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">18</div>
+                    <div class="date-month">MAR</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">SAINT PETERSBURG</h3>
+                    <p class="concert-venue">Ice Palace</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 20:00
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 2000₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link" data-city="spb">
+                        <span>TICKETS</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="concert-status available"></div>
+            </div>
+
+            <!-- Казань -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">22</div>
+                    <div class="date-month">MAR</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">KAZAN</h3>
+                    <p class="concert-venue">Tatneft Arena</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 19:30
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 1800₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link sold-out">
+                        <span>SOLD OUT</span>
+                        <i class="fas fa-times"></i>
+                    </a>
+                </div>
+                <div class="concert-status soldout"></div>
+            </div>
+
+            <!-- Екатеринбург -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">05</div>
+                    <div class="date-month">APR</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">EKATERINBURG</h3>
+                    <p class="concert-venue">DIVS Arena</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 18:00
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 1700₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link" data-city="ekb">
+                        <span>TICKETS</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="concert-status available"></div>
+            </div>
+
+            <!-- Новосибирск -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">12</div>
+                    <div class="date-month">APR</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">NOVOSIBIRSK</h3>
+                    <p class="concert-venue">Sibir Arena</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 19:00
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 1900₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link soon">
+                        <span>SOON</span>
+                        <i class="far fa-bell"></i>
+                    </a>
+                </div>
+                <div class="concert-status soon"></div>
+            </div>
+
+            <!-- Краснодар -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">19</div>
+                    <div class="date-month">APR</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">KRASNODAR</h3>
+                    <p class="concert-venue">Basket Hall</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 20:00
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 1600₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link" data-city="krd">
+                        <span>TICKETS</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="concert-status available"></div>
+            </div>
+
+            <!-- Владимир -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">03</div>
+                    <div class="date-month">MAY</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">VLADIMIR</h3>
+                    <p class="concert-venue">Tsekh</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 18:30
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 1800₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link" data-city="nn">
+                        <span>TICKETS</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="concert-status available"></div>
+            </div>
+
+            <!-- Ставрополь -->
+            <div class="concert-item">
+                <div class="concert-date">
+                    <div class="date-number">12</div>
+                    <div class="date-month">MAY</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">STAVROPOL</h3>
+                    <p class="concert-venue">Abricos Arena</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 19:00
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 1700₽
+                        </span>
+                    </div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link soon">
+                        <span>SOON</span>
+                        <i class="far fa-bell"></i>
+                    </a>
+                </div>
+                <div class="concert-status soon"></div>
+            </div>
+
+            <!-- Владивосток -->
+            <div class="concert-item featured">
+                <div class="concert-date">
+                    <div class="date-number">24</div>
+                    <div class="date-month">MAY</div>
+                </div>
+                <div class="concert-details">
+                    <h3 class="concert-city">VLADIVOSTOK</h3>
+                    <p class="concert-venue">Fetisov Arena</p>
+                    <div class="concert-info">
+                        <span class="info-item">
+                            <i class="far fa-clock"></i> 18:00
+                        </span>
+                        <span class="info-item">
+                            <i class="far fa-money-bill-alt"></i> 2200₽
+                        </span>
+                    </div>
+                    <div class="concert-tag">FINAL SHOW</div>
+                </div>
+                <div class="concert-action">
+                    <a href="#" class="ticket-link" data-city="vladivostok">
+                        <span>TICKETS</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="concert-status available"></div>
+            </div>
+        </div>
+
+        <div class="concerts-footer">
+            <p class="footer-note">
+                <i class="fas fa-circle"></i>
+                All dates are subject to change. Follow for updates.
+            </p>
+            <div class="social-links">
+                <a href="https://t.me/s/gruppacupsize" class="social-link">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://vk.com/gruppa.cupsize" class="social-link">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a href="https://www.instagram.com/cupsizecupsizecupsizecupsize/" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <a href="#top" class="scroll-top">
+        <img src="up.png" alt="Вверх" />
+    </a>
+
+    <footer class="footer">
+        <p>© 2025 CUPSIZE, FAN-PROJECT</p>
+    </footer>
+
+    <script>
+    document.querySelector('.scroll-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector('#top');
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+    </script>
+
+</body>
+</html>

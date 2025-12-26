@@ -1,0 +1,562 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url('photo/krea-edit.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    overflow-x: hidden;
+}
+
+/* Навигация */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15px;
+}
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-menu {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-size: 26px;
+    padding: 12px 24px;
+    position: relative;
+    top: -3px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.separator {
+    color: #666;
+    font-size: 24px;
+    user-select: none;
+    position: relative;
+    padding-top: 8px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.btn-menu:nth-of-type(1) { animation-delay: 0.3s; }
+.btn-menu:nth-of-type(2) { animation-delay: 0.5s; }
+.btn-menu:nth-of-type(3) { animation-delay: 0.7s; }
+.btn-menu:nth-of-type(4) { animation-delay: 0.9s; }
+
+.btn-menu:hover {
+    color: #3498db;
+    transform: translateY(-3px);
+}
+
+.btn-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.btn-menu:hover::after {
+    width: 80%;
+}
+
+.separator:nth-of-type(1) { animation-delay: 0.4s; }
+.separator:nth-of-type(2) { animation-delay: 0.6s; }
+.separator:nth-of-type(3) { animation-delay: 1.0s; }
+.separator:nth-of-type(4) { animation-delay: 1.2s; }
+.separator:nth-of-type(5) { animation-delay: 1.4s; }
+.separator:nth-of-type(6) { animation-delay: 1.6s; }
+.separator:nth-of-type(7) { animation-delay: 1.8s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Концерты */
+.concerts-minimal {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.concerts-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.concerts-subtitle {
+    color: #888;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+/* Список концертов */
+.concerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: #111;
+    border: 1px solid #222;
+}
+
+.concert-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    padding: 25px 30px;
+    background: #000;
+    position: relative;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #111;
+}
+
+.concert-item:hover {
+    background: #0a0a0a;
+}
+
+.concert-item.featured {
+    border-left: 3px solid #3498db;
+}
+
+/* Дата */
+.concert-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 30px;
+    border-right: 1px solid #222;
+}
+
+.date-number {
+    color: white;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.date-month {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+/* Детали */
+.concert-details {
+    padding: 0 40px;
+}
+
+.concert-city {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 5px 0;
+    letter-spacing: 1px;
+}
+
+.concert-venue {
+    color: #3498db;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+}
+
+.concert-info {
+    display: flex;
+    gap: 25px;
+}
+
+.info-item {
+    color: #666;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info-item i {
+    font-size: 12px;
+}
+
+.concert-tag {
+    display: inline-block;
+    color: #3498db;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border: 1px solid #3498db;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* Действия */
+.concert-action {
+    text-align: right;
+}
+
+.ticket-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 12px 25px;
+    border: 1px solid #444;
+    background: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.ticket-link:hover {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.05);
+    transform: translateX(-5px);
+}
+
+.ticket-link.sold-out {
+    color: #666;
+    border-color: #333;
+    cursor: not-allowed;
+}
+
+.ticket-link.sold-out:hover {
+    transform: none;
+    border-color: #333;
+    background: transparent;
+}
+
+.ticket-link.soon {
+    color: #888;
+    border-color: #444;
+}
+
+.ticket-link.soon:hover {
+    border-color: #888;
+}
+
+.ticket-link i {
+    font-size: 12px;
+}
+
+/* Статус */
+.concert-status {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 40px;
+    background: #2ecc71;
+}
+
+.concert-status.soldout {
+    background: #e74c3c;
+}
+
+.concert-status.soon {
+    background: #f39c12;
+}
+
+/* Футер концертов */
+.concerts-footer {
+    margin-top: 60px;
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 30px;
+}
+
+.footer-note {
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.footer-note i {
+    font-size: 6px;
+    color: #3498db;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    color: #666;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #3498db;
+    transform: translateY(-2px);
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.modal-title {
+    color: white;
+    font-size: 24px;
+    margin: 0 0 30px 0;
+    letter-spacing: 1px;
+}
+
+.modal-text {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.modal-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 15px 20px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.modal-link:hover {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.05);
+}
+
+.modal-link i {
+    color: #3498db;
+    width: 20px;
+}
+
+/* Футер страницы */
+.footer {
+    background: #2e2e2e;
+    padding: 15px;
+    text-align: center;
+    border-top: 2px solid #555;
+    color: #aaa;
+    flex-shrink: 0;
+}
+
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.scroll-top:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.scroll-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .btn-menu {
+        font-size: 22px;
+    }
+    
+    .concert-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+        padding: 25px;
+    }
+    
+    .concert-date {
+        border-right: none;
+        border-bottom: 1px solid #222;
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .concert-details {
+        padding: 0;
+    }
+    
+    .concert-info {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .concert-action {
+        text-align: center;
+    }
+    
+    .concert-status {
+        top: 20px;
+        right: 20px;
+        transform: none;
+        width: 40px;
+        height: 4px;
+    }
+    
+    .footer-note {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .concert-city {
+        font-size: 18px;
+    }
+    
+    .ticket-link {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .btn-menu {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-menu,
+    .separator,
+    .concerts-minimal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .ticket-link:hover {
+        transform: none;
+    }
+}
